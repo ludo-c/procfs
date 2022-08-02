@@ -1354,16 +1354,16 @@ mod tests {
         }
     }
 
-    /// Test that our error type can be easily used with the `failure` crate
+    /// Test that our error type can be easily used with the `anyhow` crate
     #[test]
     fn test_failure() {
-        fn inner() -> Result<(), failure::Error> {
+        fn inner() -> Result<(), anyhow::Error> {
             let _load = crate::LoadAverage::new()?;
             Ok(())
         }
         let _ = inner();
 
-        fn inner2() -> Result<(), failure::Error> {
+        fn inner2() -> Result<(), anyhow::Error> {
             let proc = crate::process::Process::new(1)?;
             let _io = proc.maps()?;
             Ok(())
