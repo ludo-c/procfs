@@ -95,11 +95,11 @@ pub struct Stat {
     /// user  mode,  measured  in clock ticks (divide by [`ticks_per_second()`](crate::ticks_per_second)).
     ///
     /// This includes guest time, cguest_time (time spent running a virtual CPU, see below).
-    pub cutime: i64,
+    pub cutime: u64,
 
     /// Amount of time that this process's waited-for  children  have  been  scheduled  in  kernel
     /// mode,  measured  in  clock  ticks  (divide  by [`ticks_per_second()`](crate::ticks_per_second)).
-    pub cstime: i64,
+    pub cstime: u64,
     /// For processes running a real-time scheduling policy (policy below; see sched_setscheduler(2)),
     /// this is the negated scheduling priority, minus one;
     ///
